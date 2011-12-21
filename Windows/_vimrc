@@ -19,7 +19,6 @@ set smartindent
 set gfn=Consolas:h9:cANSI
 colorscheme zenburn
 
-
 set nobackup
 set nowritebackup
 set noswapfile
