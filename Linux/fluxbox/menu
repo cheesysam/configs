@@ -35,7 +35,7 @@
 [end]
       [workspaces] (Workspace List)
 [submenu] (Tools)
-      [exec] (Run) {fbrun }
+      [exec] (Run) {fbrun}
       [exec] (Regen Menu) {fluxbox-generate_menu }
 [end]
       [commanddialog] (Fluxbox Command)
