@@ -1,0 +1,3 @@
+put stuff in the xdefaults file in ~/.Xdefaults
+then
+xrdb -load ~/.Xdefaults
