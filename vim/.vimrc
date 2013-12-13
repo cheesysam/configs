@@ -16,7 +16,12 @@ set tabstop=4
 set shiftwidth=4
 set smarttab
 set smartindent
-set colorcolumn=80
+set hlsearch
+
+call matchadd('ColorColumn', '\%81v', 100)
+exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
+set list
+
 execute pathogen#infect()
 
 set gfn=Consolas:h9:cANSI
