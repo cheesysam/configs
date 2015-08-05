@@ -18,7 +18,7 @@ set smarttab
 set smartindent
 set hlsearch
 
-call matchadd('ColorColumn', '\%81v', 100)
+autocmd BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%81v.')
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 set list
 
