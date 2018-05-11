@@ -1,41 +1,40 @@
-set nocompatible
-
-if has("win32")
-    source $VIMRUNTIME/mswin.vim
-    behave mswin
-endif
-
-:filetype on
-let NERDTreeIgnore = ['\.pyc$']
-
-set wildmenu
-set wildmode=list:longest
-
-set expandtab
-set tabstop=4
-set shiftwidth=4
-set smarttab
-set smartindent
-set hlsearch
-
-autocmd BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%81v.')
-exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
-set list
-
-execute pathogen#infect()
-
-set gfn=Consolas:h9:cANSI
 colorscheme zenburn
+
+set mouse=a
+set ruler
+:nnoremap <F5> "=strftime('%d %b, %Y')<CR>P
+:inoremap <F5> <C-R>=strftime('%d %b, %Y')<CR>
+
+set number
+set nobk
+syntax on
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+set colorcolumn=80
 
 set nobackup
 set nowritebackup
 set noswapfile
 
-autocmd FileType *.cpp *.h *.c
-            \set noexpandtab
-autocmd FileType *.py
-            \set foldmethod=indent
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set smarttab
+set smartindent
+set hlsearch
 
-set number
-set nobk
-syntax on
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+let g:netrw_browse_split = 2
+filetype plugin indent on
+
+let g:ale_linters = {'go': ['gometalinter', 'gofmt', 'go build', 'gosimple']}
+let g:ale_go_gometalinter_options = "--fast"
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_save = 1
+
+packloadall
+silent! helptags ALL
+hi VertSplit ctermfg=24
+hi StatusLine ctermfg=24
